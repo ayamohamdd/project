@@ -1,0 +1,290 @@
+/*Start Global Rules*/
+/*Start Variables*/
+:root{
+    --home-color:#E1F5FE;
+    --divs-color:#0288D1;
+    --label-color:#01072a;
+    --secondary-color:#01579B;
+}
+/*End Variables*/
+
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--home-color);
+
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media(min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* Medium */
+
+@media(min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large */
+
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+
+/* Start Header */
+.box{
+    height: 10vh;
+    width: 100%;
+    background-color: var(--home-color);
+}
+.header{
+    background-color: var(--secondary-color);
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.header .container .logo {    
+    font-size: 30px;
+    margin-top: 15px;
+    color: var(--home-color);
+    cursor: pointer;
+
+}
+.header .container .logo span{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Changa', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+.header .container .logo i{
+    font-size: 40px;
+}
+.header .container ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    
+}
+.header .container ul a{
+    text-decoration: none;
+    color: var(--home-color);
+    font-size: 20px;
+    transition: all 0.3s ease 0s;
+}
+.header .container ul a:hover{
+    color: var(--label-color);
+    background-color:#B3E5FC;
+    border-bottom: 3px solid var(--label-color);  
+    padding:5px;
+}
+.header .container li{
+    padding: 0px 10px;
+    margin-top: 20px;
+}
+.header .container #navbar li:last-child{
+    color: var(--home-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+.header .container .menu {
+    display: block;
+    color: var(--home-color);
+    font-size: 30px;
+    margin: 26px 6px 5px;
+    cursor: pointer;
+
+}
+@media(min-width:799px){
+    .header .container .menu{
+        display: none;
+    }
+    
+}
+/* Start Header For Mobile*/
+@media(max-width:799px){
+    .header .container .logo span{
+        font-size: 30px;
+    }
+   
+    .header .container #navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position:fixed;
+        top: 55px;
+        right: -500px;
+        height: 80vh;
+        width: 300px;
+        background-color: var(--secondary-color);
+        box-shadow: 0 40px 60px;
+        border-radius: 10px 0 0 10px;
+        padding: 30px 0 0 10px ;
+        z-index: 1;
+        transition: .3s;
+    }
+    .header .container #navbar.active{
+        right: 0px;
+    }
+    .header .container #navbar::before{
+        content: "";
+        border-width:10px ;
+        border-style:solid;
+        border-color:transparent transparent var(--secondary-color) transparent ;
+        position: absolute;
+        right: 22px;
+        top:-20px;
+    }
+    .header .container #navbar li{
+        padding: 0px 10px 75px 10px;
+        transition: .3s;
+    }
+    .header .container #navbar li:not(:last-child) a{
+        border-bottom:1px solid #ddd ;
+    }
+    .header .container #navbar li a:hover{
+        padding-left: 20px;
+    }
+    .header .container #navbar li:last-child{
+        display: none;
+    }
+    .header .container .menu #x{
+        display: none;
+    }
+} 
+/* End Header For Mobile*/
+
+/* End Header */
+
+/* Start Scoreboard Page*/
+.scoreboard .container{
+    display: flex;
+    flex-direction: column;
+}
+.scoreboard .container h2{
+    color: var(--label-color);
+    text-align: center;
+    font-size: 37px;
+    background-color: rgb(200 225 255  /54%);
+    height: 51px;
+    border-radius: 10px;
+    font-family: 'Changa', sans-serif;
+}
+.scoreboard .game{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.scoreboard .game h3{
+    color: var(--home-color);
+    background-color: var(--label-color);
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 8px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    border-radius: 15px 15px 0 0;
+    font-family: 'Changa', sans-serif;
+}
+.scoreboard .game .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--divs-color);
+    border-radius: 0 0 15px 15px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.scoreboard .game .row span{
+    justify-content: space-between;
+    width: 80px;
+    max-width: 60px;
+}
+.scoreboard .game .row div{
+    position: relative;
+    width: 100px;
+    align-items: center;
+}
+.scoreboard .game .row div div{
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    width: 80px;
+    border-radius: 50px;
+    color: var(--home-color);
+    text-align: center;
+    position: absolute;
+    top: 64px;
+}
+.scoreboard .game .row div .finished{
+    background-color: #c92205;   
+}
+.scoreboard .game .row div .will{
+    background-color: var(--label-color);
+}
+.scoreboard .game .row div .playing{
+    background-color: #367f14;
+}
+.scoreboard .game .row p{
+    color: var(--home-color);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    width: 80px;
+    max-width: 60px;
+}
+.scoreboard .game .row .team{
+    width: 49px;
+    cursor: pointer;
+}
+/* Start Scoreboard For Mobile*/
+@media(max-width:799px){
+.scoreboard .container h2{
+    font-size: 25px;
+    padding-top: 10px;
+}
+.scoreboard .game h3{
+    font-size: 20px;
+    padding-top: 10px;
+}
+.scoreboard .game .row p{
+    font-size: 13px;
+}
+.scoreboard .game .row .team{
+    width: 40px;
+}
+.scoreboard .game .row div {
+    width: 60px;
+}
+.scoreboard .game .row div div{
+    width: 71px;
+}
+}
+/* End Scoreboard Page*/
